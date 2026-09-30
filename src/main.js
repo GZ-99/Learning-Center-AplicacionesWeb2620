@@ -4,18 +4,71 @@ import PrimeVue from 'primevue/config'
 import Material from '@primeuix/themes/material'
 import 'primeflex/primeflex.css'
 import 'primeicons/primeicons.css'
-import {SelectButton} from "primevue";
-import i18n from "@/i18n.js";
 
-const primeUiLicenseKey = import.meta.env.VITE_PRIME_UI_LICENSE_KEY
+import Tooltip from 'primevue/tooltip';
+import {
+    Button,
+    Card,
+    Checkbox,
+    Column,
+    ConfirmDialog,
+    DataTable,
+    Dialog,
+    Drawer,
+    FileUpload,
+    FloatLabel,
+    IconField,
+    InputIcon,
+    InputNumber,
+    InputText,
+    Menu,
+    Rating,
+    Row,
+    Select,
+    SelectButton,
+    Tag,
+    Toast,
+    Textarea,
+    Toolbar
+} from "primevue";
+import i18n from "@/i18n.js";
+import pinia from "@/pinia.js";
+import router from "@/router.js";
+
+const primeUiLicenseKey = import.meta.env.VITE_PRIME_UI_LICENSE_KEY;
 createApp(App)
     .use(i18n)
     .use(PrimeVue, {
         ripple: true,
-        license: "primeUiLicenseKey",
+        license: primeUiLicenseKey,
         theme: {
             preset: Material
         }
     })
-    .component('pv-select-button', SelectButton)
+    .component('pv-button',         Button)
+    .component('pv-card',           Card)
+    .component('pv-column',         Column)
+    .component('pv-confirm-dialog', ConfirmDialog)
+    .component('pv-checkbox',       Checkbox)
+    .component('pv-data-table',     DataTable)
+    .component('pv-dialog',         Dialog)
+    .component('pv-select',         Select)
+    .component('pv-select-button',  SelectButton)
+    .component('pv-file-upload',    FileUpload)
+    .component('pv-float-label',    FloatLabel)
+    .component('pv-icon-field',     IconField)
+    .component('pv-input-icon',     InputIcon)
+    .component('pv-input-text',     InputText)
+    .component('pv-input-number',   InputNumber)
+    .component('pv-menu',           Menu)
+    .component('pv-rating',         Rating)
+    .component('pv-row',            Row)
+    .component('pv-drawer',         Drawer)
+    .component('pv-tag',            Tag)
+    .component('pv-textarea',       Textarea)
+    .component('pv-toolbar',        Toolbar)
+    .component('pv-toast',          Toast)
+    .directive('tooltip',           Tooltip)
+    .use(pinia)
+    .use(router)
     .mount('#app')
