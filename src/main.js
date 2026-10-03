@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import App from './app.vue'
 import PrimeVue from 'primevue/config'
 import Material from '@primeuix/themes/material'
 import 'primeflex/primeflex.css'
@@ -29,7 +29,10 @@ import {
     Tag,
     Toast,
     Textarea,
-    Toolbar
+    Toolbar,
+    ConfirmationService,
+    DialogService,
+    ToastService
 } from "primevue";
 import i18n from "@/i18n.js";
 import pinia from "@/pinia.js";
@@ -45,6 +48,9 @@ createApp(App)
             preset: Material
         }
     })
+    .use(ConfirmationService)
+    .use(DialogService)
+    .use(ToastService)
     .component('pv-button',         Button)
     .component('pv-card',           Card)
     .component('pv-column',         Column)

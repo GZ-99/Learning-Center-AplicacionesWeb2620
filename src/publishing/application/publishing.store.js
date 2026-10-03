@@ -18,13 +18,11 @@ const usePublishingStore = defineStore("publishing", () => {
     const tutorialsLoaded = ref(false);
 
     const categoriesCount = computed(() => {
-        return categoriesLoaded ? categories.value
-            .length : 0;
+        return categoriesLoaded ? categories.value.length : 0;
     });
 
     const tutorialCount = computed(() => {
-        return tutorialsLoaded ? tutorials.value
-            .length : 0;
+        return tutorialsLoaded ? tutorials.value.length : 0;
     });
 
     function fetchCategories() {
