@@ -2,7 +2,7 @@
 import {useI18n} from "vue-i18n";
 import usePublishingStore from "@/publishing/application/publishing.store.js";
 import {computed, onMounted, ref} from "vue";
-import {useRoute} from "vue-router";
+import {useRoute, useRouter} from "vue-router";
 import {Category} from "@/publishing/domain/model/category.entity.js";
 
 const {t} = useI18n();
