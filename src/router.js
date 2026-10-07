@@ -25,6 +25,11 @@ const routes =
             name: 'publishing',
             children: publishingRoutes
         },
+        /*{
+            path: '/aim',
+            name: 'iam',
+            children: iamRoutes
+        },*/
         {
             path: '/',
             redirect: '/home'
